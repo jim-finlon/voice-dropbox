@@ -157,6 +157,13 @@ if (Test-Path $giteaHelperPath) {
                         if ($LASTEXITCODE -eq 0) {
                             Write-Host "    [OK] Cloned successfully" -ForegroundColor Green
                             $clonedCount++
+                            
+                            # Fetch all branches and refs after cloning
+                            Write-Host "    Fetching all branches..." -ForegroundColor Gray
+                            Push-Location $repoPath
+                            git fetch --all --prune 2>&1 | Out-Null
+                            Pop-Location
+                            Write-Host "    [OK] Fetched all branches" -ForegroundColor Green
                         } else {
                             Write-Host "    [ERROR] Clone failed" -ForegroundColor Red
                         }
@@ -214,6 +221,13 @@ if ($IncludeGitHub) {
                     if ($LASTEXITCODE -eq 0) {
                         Write-Host "    [OK] Cloned successfully" -ForegroundColor Green
                         $clonedCount++
+                        
+                        # Fetch all branches and refs after cloning
+                        Write-Host "    Fetching all branches..." -ForegroundColor Gray
+                        Push-Location $repoPath
+                        git fetch --all --prune 2>&1 | Out-Null
+                        Pop-Location
+                        Write-Host "    [OK] Fetched all branches" -ForegroundColor Green
                     } else {
                         Write-Host "    [ERROR] Clone failed" -ForegroundColor Red
                     }
