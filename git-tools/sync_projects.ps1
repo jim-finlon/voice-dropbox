@@ -21,7 +21,7 @@ $giteaHelperPath = Join-Path $PSScriptRoot "gitea_helper.ps1"
 if (Test-Path $giteaHelperPath) {
     . $giteaHelperPath
 } else {
-    Write-Host "[WARNING] gitea_helper.ps1 not found. Gitea sync will be skipped." -ForegroundColor Yellow
+    Write-Host "[WARNING] gitea_helper.ps1 not found at $giteaHelperPath. Gitea sync will be skipped." -ForegroundColor Yellow
 }
 
 Write-Host "=== Project Synchronization ===" -ForegroundColor Cyan
