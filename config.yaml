@@ -1,0 +1,52 @@
+paths:
+  watch_folder: "D:/VoiceDropbox/incoming"
+  processing_folder: "D:/VoiceDropbox/processing"
+  archive_folder: "D:/VoiceDropbox/archive"
+  failed_folder: "D:/VoiceDropbox/failed"
+  output_folder: "//RaspiDesktop/Documents/Obsidian Shared/Voice Notes"
+  whisper_temp_output: "whisper_output"
+
+whisper:
+  model: "large"
+  language: "en"
+  device: "cuda"
+  venv_path: "~/whisper/venv"
+  output_format: "txt"
+  command_timeout_seconds: 600
+
+processing:
+  poll_interval_seconds: 2
+  supported_formats: [".mp3", ".wav", ".m4a", ".flac", ".ogg", ".webm"]
+  organize_by_date: true
+  file_write_wait_seconds: 1
+
+output:
+  filename_timestamp_format: "%Y-%m-%d_%H%M"
+  filename_prefix: "_voice-note"
+  filename_extension: ".md"
+  duplicate_counter_format: "_voice-note_{counter}"
+  frontmatter_datetime_format: "%Y-%m-%dT%H:%M:%S"
+  header_datetime_format: "%Y-%m-%d %H:%M"
+  header_prefix: "# Voice Note - "
+  footer_text: "*Transcribed automatically by Voice Transcription System*"
+  default_tags: ["voice-note", "transcription"]
+  command_type: "note"
+  date_organization:
+    year_format: "%Y"
+    month_format: "%m-%B"
+
+notifications:
+  enabled: true
+  on_success: true
+  on_failure: true
+  app_id: "Voice Transcription"
+  success_title: "Transcription Complete"
+  failure_title: "Transcription Failed"
+  startup_title: "Watcher Started"
+  success_duration: "short"
+  failure_duration: "long"
+  startup_duration: "short"
+
+logging:
+  level: "INFO"
+  file: "D:/VoiceDropbox/transcription.log"

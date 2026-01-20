@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Logs
+*.log
+transcription.log
+
+# Audio files (don't commit processed audio)
+*.mp3
+*.wav
+*.m4a
+*.flac
+*.ogg
+*.webm
+
+# Processing folders (temporary)
+processing/whisper_output/
+processing/*.mp3
+processing/*.wav
+processing/*.m4a
+processing/*.flac
+processing/*.ogg
+processing/*.webm
+
+# Archive folder (keep structure but not files)
+archive/*.mp3
+archive/*.wav
+archive/*.m4a
+archive/*.flac
+archive/*.ogg
+archive/*.webm
+
+# Failed folder (keep structure but not files)
+failed/*.mp3
+failed/*.wav
+failed/*.m4a
+failed/*.flac
+failed/*.ogg
+failed/*.webm
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Config (may contain sensitive paths)
+# Uncomment if you want to exclude config.yaml
+# config.yaml
+
+# Keep folder structure
+!processing/.gitkeep
+!archive/.gitkeep
+!failed/.gitkeep
+!incoming/.gitkeep
