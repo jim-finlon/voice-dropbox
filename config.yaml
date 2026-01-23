@@ -3,7 +3,7 @@ paths:
   processing_folder: "D:/VoiceDropbox/processing"
   archive_folder: "D:/VoiceDropbox/archive"
   failed_folder: "D:/VoiceDropbox/failed"
-  output_folder: "//RaspiDesktop/Documents/Obsidian Shared/Voice Notes"
+  output_folder: "D:/Obsidian-Documents/Voice Notes"
   whisper_temp_output: "whisper_output"
 
 whisper:
@@ -12,7 +12,7 @@ whisper:
   device: "cuda"
   venv_path: "~/whisper/venv"
   output_format: "txt"
-  command_timeout_seconds: 600
+  command_timeout_seconds: 3600  # 1 hour - allows processing up to 30-60 min audio
 
 processing:
   poll_interval_seconds: 2
